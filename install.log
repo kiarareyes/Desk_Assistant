@@ -1,0 +1,158 @@
+install starting  - Mon Mar 30 14:41:40 CDT 2020
+installing on armv7l processor system
+the os is Distributor ID: Raspbian Description: Raspbian GNU/Linux 10 (buster) Release: 10 Codename: buster
+[96mUpdating packages ...[90m
+Get:1 http://archive.raspberrypi.org/debian buster InRelease [25.1 kB] Get:2 http://raspbian.raspberrypi.org/raspbian buster InRelease [15.0 kB] Get:3 http://raspbian.raspberrypi.org/raspbian buster/main armhf Packages [13.0 MB] Get:4 http://archive.raspberrypi.org/debian buster/main armhf Packages [280 kB] Fetched 13.3 MB in 13s (1,006 kB/s) Reading package lists...
+apt-get update  completed ok
+install starting  - Mon Mar 30 15:16:07 CDT 2020
+installing on armv7l processor system
+the os is Distributor ID: Raspbian Description: Raspbian GNU/Linux 10 (buster) Release: 10 Codename: buster
+[96mUpdating packages ...[90m
+Hit:1 http://archive.raspberrypi.org/debian buster InRelease Hit:2 http://raspbian.raspberrypi.org/raspbian buster InRelease Reading package lists...
+apt-get update  completed ok
+apt upgrade result =rc=0 Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  alsa-base gstreamer0.10-alsa gstreamer0.10-plugins-base
+  libgstreamer-plugins-base0.10-0 libgstreamer0.10-0 libxfce4util-bin
+  libxfce4util-common libxfce4util7 libxfconf-0-2 pimixer point-rpi vlc-l10n
+  vlc-plugin-notify vlc-plugin-samba vlc-plugin-video-splitter
+  vlc-plugin-visualization xfconf
+Use 'sudo apt autoremove' to remove them.
+The following packages have been kept back:
+  binutils binutils-arm-linux-gnueabihf binutils-common libbinutils
+  libgl1-mesa-dri libjavascriptcoregtk-4.0-18 libvlc-bin libvlc5
+  libwebkit2gtk-4.0-37 mesa-va-drivers mesa-vdpau-drivers pcmanfm scratch3 vlc
+  vlc-bin vlc-data vlc-plugin-base vlc-plugin-qt vlc-plugin-skins2
+  vlc-plugin-video-output
+0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.
+[96mInstalling helper tools ...[90m
+[96mCheck current Node installation ...[0m
+[0mNode currently installed. Checking version number.
+[0mMinimum Node version: [1mv10.1.0[0m
+[0mInstalled Node version: [1mv10.15.2[0m
+[92mNo Node.js upgrade necessary.[0m
+[96mCheck current NPM installation ...[0m
+[0mNPM currently installed. Checking version number.
+[0mMinimum npm version: [1mV6.0.0[0m
+[0mInstalled npm version: [1mV5.8.0[0m
+[96mnpm should be upgraded.[0m
+[96mInstalling npm ...[90m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+npm is already the newest version (5.8.0+ds6-4).
+npm set to manually installed.
+The following packages were automatically installed and are no longer required:
+  alsa-base gstreamer0.10-alsa gstreamer0.10-plugins-base
+  libgstreamer-plugins-base0.10-0 libgstreamer0.10-0 libxfce4util-bin
+  libxfce4util-common libxfce4util7 libxfconf-0-2 pimixer point-rpi vlc-l10n
+  vlc-plugin-notify vlc-plugin-samba vlc-plugin-video-splitter
+  vlc-plugin-visualization xfconf
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 20 not upgraded.
+upgrading npm to latest
+/usr/local/bin/npm -> /usr/local/lib/node_modules/npm/bin/npm-cli.js
+/usr/local/bin/npx -> /usr/local/lib/node_modules/npm/bin/npx-cli.js
++ npm@6.14.4
+added 435 packages from 869 contributors in 47.42s
+[92mnpm installation Done! version=V6.14.4[0m
+[96mCloning MagicMirror ...[90m
+[92mCloning MagicMirror Done![0m
+[96mInstalling dependencies ...[90m
+[92mDependencies installation Done![0m
+setting up initial config.js
+[96mCheck plymouth installation ...[0m
+[90mSplashscreen: Checking themes directory.[0m
+[90mSplashscreen: Create theme directory if not exists.[0m
+[92mSplashscreen: Changed theme to MagicMirror successfully.[0m
+install and setup pm2
+pm2 not installed, installing
+pm2 install result npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.) /usr/local/bin/pm2 -> /usr/local/lib/node_modules/pm2/bin/pm2 /usr/local/bin/pm2-dev -> /usr/local/lib/node_modules/pm2/bin/pm2-dev /usr/local/bin/pm2-docker -> /usr/local/lib/node_modules/pm2/bin/pm2-docker /usr/local/bin/pm2-runtime -> /usr/local/lib/node_modules/pm2/bin/pm2-runtime npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/pm2/node_modules/chokidar/node_modules/fsevents): npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm"}) + pm2@4.2.3 added 207 packages from 202 contributors in 41.003s
+get the pm2 platform specific startup command
+startup command = sudo env PATH=$PATH:/usr/bin:/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
+
+                        -------------
+
+__/\\\\\\\\\\\\\____/\\\\____________/\\\\____/\\\\\\\\\_____
+ _\/\\\/////////\\\_\/\\\\\\________/\\\\\\__/\\\///////\\\___
+  _\/\\\_______\/\\\_\/\\\//\\\____/\\\//\\\_\///______\//\\\__
+   _\/\\\\\\\\\\\\\/__\/\\\\///\\\/\\\/_\/\\\___________/\\\/___
+    _\/\\\/////////____\/\\\__\///\\\/___\/\\\________/\\\//_____
+     _\/\\\_____________\/\\\____\///_____\/\\\_____/\\\//________
+      _\/\\\_____________\/\\\_____________\/\\\___/\\\/___________
+       _\/\\\_____________\/\\\_____________\/\\\__/\\\\\\\\\\\\\\\_
+        _\///______________\///______________\///__\///////////////__
+
+
+                          Runtime Edition
+
+        PM2 is a Production Process Manager for Node.js applications
+                     with a built-in Load Balancer.
+
+                Start and Daemonize any application:
+                $ pm2 start app.js
+
+                Load Balance 4 instances of api.js:
+                $ pm2 start api.js -i 4
+
+                Monitor in production:
+                $ pm2 monitor
+
+                Make pm2 auto-boot at server restart:
+                $ pm2 startup
+
+                To go further checkout:
+                http://pm2.io/
+
+
+                        -------------
+
+[PM2] Init System found: systemd
+Platform systemd
+Template
+[Unit]
+Description=PM2 process manager
+Documentation=https://pm2.keymetrics.io/
+After=network.target
+
+[Service]
+Type=forking
+User=pi
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+Environment=PATH=$PATH:/usr/bin:/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+Environment=PM2_HOME=/home/pi/.pm2
+PIDFile=/home/pi/.pm2/pm2.pid
+Restart=on-failure
+
+ExecStart=/usr/local/lib/node_modules/pm2/bin/pm2 resurrect
+ExecReload=/usr/local/lib/node_modules/pm2/bin/pm2 reload all
+ExecStop=/usr/local/lib/node_modules/pm2/bin/pm2 kill
+
+[Install]
+WantedBy=multi-user.target
+
+Target path
+/etc/systemd/system/pm2-pi.service
+Command list
+[ 'systemctl enable pm2-pi' ]
+[PM2] Writing init configuration in /etc/systemd/system/pm2-pi.service
+[PM2] Making script booting at startup...
+[PM2] [-] Executing: systemctl enable pm2-pi...
+[PM2] [v] Command successfully executed.
++---------------------------------------+
+[PM2] Freeze a process list on reboot via:
+$ pm2 save
+
+[PM2] Remove init script via:
+$ pm2 unstartup systemd
+pm2 startup command done
+configure the pm2 config file for MagicMirror
+start MagicMirror via pm2 now
+save MagicMirror pm2 config now
+[92mWe're ready! Run [1m[97mpm2 start MagicMirror[0m[92m from the ~/MagicMirror directory to start your MagicMirror.[0m
+install completed - Mon Mar 30 15:24:21 CDT 2020
